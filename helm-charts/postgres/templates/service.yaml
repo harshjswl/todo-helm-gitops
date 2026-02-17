@@ -1,14 +1,12 @@
-image:
-  repository: postgres
-  tag: "15"
-
-postgres:
-  db: todo
-  user: postgres
-  password: postgres
-
-service:
-  port: 5432
-
-storage:
-  size: 1Gi
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres
+  namespace: default
+spec:
+  type: ClusterIP
+  selector:
+    app: postgres
+  ports:
+    - port: 5432
+      targetPort: 5432
