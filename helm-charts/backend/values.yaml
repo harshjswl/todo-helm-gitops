@@ -1,0 +1,17 @@
+replicaCount: 1
+
+image:
+  repository: harshjswl/todo-backend
+  tag: latest
+  pullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 8080
+
+env:
+  DB_HOST: postgres
+  DB_PORT: "5432"
+  DB_NAME: todo
+  DB_USER: postgres
+  DB_PASSWORD: postgres
