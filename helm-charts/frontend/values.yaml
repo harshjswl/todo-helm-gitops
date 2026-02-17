@@ -1,0 +1,13 @@
+replicaCount: 1
+
+image:
+  repository: harshjswl/todo-frontend
+  tag: latest
+  pullPolicy: Always
+
+service:
+  type: LoadBalancer
+  port: 80
+
+backend:
+  url: http://backend-service:8080
